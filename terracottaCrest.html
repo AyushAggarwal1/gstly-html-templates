@@ -1,9 +1,8 @@
-<!-- @template-name: Standard Invoice -->
-<!-- @template-description: Ink-and-paper ledger style with a firm masthead, stamped TAX INVOICE mark and scan-to-pay footer -->
-<!-- @template-category: Standard -->
+<!-- @template-name: Terracotta Crest -->
+<!-- @template-description: Modern statement header that leads with the amount payable — terracotta accents on a cool grey grid -->
+<!-- @template-category: Modern -->
 <!-- @template-author: @AyushAggarwal1 -->
-<!-- @template-version: 2.0 -->
-
+<!-- @template-version: 1.0 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +11,18 @@
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
   <style>
     /* ------------------------------------------------------------------
-       Standard Invoice — ink on paper.
-       One accent (registration blue) spent on the numbers that matter.
+       Terracotta Crest — the amount leads.
+       A tinted payable card sits in the header the way modern billing
+       statements do; everything below is a quiet cool-grey grid.
        ------------------------------------------------------------------ */
     :root {
-      --ink: #17181a;
-      --muted: #62656d;
-      --faint: #9a9da4;
-      --rule: #d8dade;
-      --accent: #23408e;
+      --ink: #2b2723;
+      --muted: #6f6a64;
+      --rule: #e0dcd7;
+      --terra: #b0421c;
+      --terra-deep: #8c3315;
+      --terra-tint: #faf0ea;
+      --grey-tint: #f5f4f2;
       --paper: #ffffff;
     }
 
@@ -31,59 +33,55 @@
     }
 
     body {
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
       font-size: 11px;
-      line-height: 1.45;
+      line-height: 1.5;
       color: var(--ink);
-      background: #ececee;
+      background: #edebe8;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-
     /* Hard formatting: dynamic fragments ({{ITEMS_TABLE}} rows, {{TAX_ROWS}},
-
        bank/UPI/delivery blocks) are injected with their own markup and inline
-
        styles — force every element into the template's font stack so DB values
-
        render identically to the static labels. */
-
     body,
-
     body * {
+      font-family: "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif !important;
+    }
 
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
-
+    table.items tbody td,
+    table.summary-table td {
+      font-variant-numeric: tabular-nums;
     }
 
     .sheet {
       max-width: 820px;
       margin: 24px auto;
-      padding: 44px 48px;
       background: var(--paper);
-      border: 1px solid #dcdee2;
+      padding: 40px 44px;
+      border: 1px solid #d8d4cf;
+      border-top: 5px solid var(--terra);
     }
 
-    /* ---------- masthead ---------- */
+    /* ---------- header: identity left, payable card right ---------- */
     .masthead {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 24px;
-      padding-bottom: 18px;
-      border-bottom: 2px solid var(--ink);
+      gap: 28px;
+      margin-bottom: 18px;
     }
 
     .identity {
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
+      gap: 13px;
       min-width: 0;
     }
 
     .profile-photo {
-      height: 56px;
+      height: 54px;
       width: auto;
       max-width: 190px;
       object-fit: contain;
@@ -93,105 +91,132 @@
     .firm-name {
       font-size: 21px;
       font-weight: 700;
-      letter-spacing: -0.2px;
-      line-height: 1.15;
+      letter-spacing: -0.3px;
     }
 
     .firm-meta {
-      margin-top: 6px;
+      margin-top: 5px;
       font-size: 9.5px;
       color: var(--muted);
     }
 
     .firm-meta p {
-      margin: 0 0 1px 0;
+      margin: 0 0 1px;
     }
 
     .firm-meta .gstin {
       color: var(--ink);
-      font-weight: 600;
-    }
-
-    .doc-block {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .doc-stamp {
-      display: inline-block;
-      padding: 5px 12px;
-      border: 2px solid var(--ink);
-      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
     }
 
-    .doc-meta {
-      margin-top: 10px;
-      font-size: 10px;
-    }
-
-    .doc-meta .row {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      margin-bottom: 2px;
-    }
-
-    .doc-meta .label {
-      color: var(--faint);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      font-size: 8.5px;
-      padding-top: 1px;
-    }
-
-    .doc-meta .value {
-      font-weight: 600;
+    .payable-card {
+      flex-shrink: 0;
+      min-width: 220px;
+      background: var(--terra-tint);
+      border: 1px solid #ecd3c6;
+      border-left: 4px solid var(--terra);
+      padding: 12px 16px;
       font-variant-numeric: tabular-nums;
     }
 
-    .doc-meta .value.accent {
-      color: var(--accent);
+    .payable-card .pc-label {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--terra-deep);
+    }
+
+    .payable-card .pc-amount {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--terra-deep);
+      letter-spacing: -0.3px;
+      margin: 2px 0 6px;
+    }
+
+    .payable-card .pc-meta {
+      display: flex;
+      gap: 16px;
+      border-top: 1px solid #ecd3c6;
+      padding-top: 6px;
+    }
+
+    .payable-card .pc-meta .label {
+      display: block;
+      font-size: 7.5px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .payable-card .pc-meta .value {
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    /* ---------- document title strip ---------- */
+    .title-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-top: 2px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 8px 0;
+      margin-bottom: 16px;
+    }
+
+    .title-strip .doc-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    .title-strip .doc-title span {
+      color: var(--terra);
+    }
+
+    .title-strip .tax-chip {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--terra-deep);
+      background: var(--terra-tint);
+      border: 1px solid #ecd3c6;
+      padding: 3px 10px;
+      border-radius: 999px;
     }
 
     /* ---------- parties ---------- */
-    .parties {
-      display: flex;
-      gap: 40px;
-      padding: 16px 0 18px;
-    }
-
     .party {
-      flex: 1;
-      min-width: 0;
+      margin: 0 0 18px;
       max-width: 62%;
     }
 
     .eyebrow {
       font-size: 8.5px;
       font-weight: 700;
-      letter-spacing: 1.6px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--terra);
       margin-bottom: 6px;
     }
 
     .party .name {
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
-      margin-bottom: 3px;
     }
 
     .party p {
-      margin: 0 0 2px 0;
+      margin: 1px 0 0;
       color: var(--muted);
     }
 
     .party .gstin {
       color: var(--ink);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* ---------- items ---------- */
@@ -206,21 +231,22 @@
     }
 
     table.items thead th {
+      background: var(--grey-tint);
       font-size: 8.5px;
       font-weight: 700;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: var(--muted);
       text-align: left;
-      padding: 8px 8px 6px;
+      color: var(--ink);
+      padding: 7px 8px;
       border-top: 2px solid var(--ink);
       border-bottom: 1px solid var(--ink);
     }
 
     table.items tbody td {
-      padding: 7px 8px;
+      padding: 6px 8px;
       border-bottom: 1px solid var(--rule);
-      vertical-align: top;
+      font-size: 10.5px;
     }
 
     table.items tbody tr {
@@ -251,24 +277,23 @@
     .totals-wrap {
       display: flex;
       justify-content: flex-end;
-      padding-top: 10px;
+      margin-top: 12px;
       page-break-inside: avoid;
     }
 
     table.summary-table {
-      width: 290px;
+      width: 300px;
       border-collapse: collapse;
       font-variant-numeric: tabular-nums;
     }
 
     table.summary-table td {
-      padding: 4px 0;
+      padding: 4px 10px;
       font-size: 11px;
     }
 
     table.summary-table td:first-child {
       color: var(--muted);
-      text-align: left;
     }
 
     table.summary-table td:last-child {
@@ -277,21 +302,18 @@
     }
 
     table.summary-table tr.total-row td {
-      padding-top: 8px;
-      border-top: 2px solid var(--ink);
-      font-size: 14.5px;
+      background: var(--terra);
+      color: #fff;
+      font-size: 13.5px;
       font-weight: 700;
-      color: var(--ink);
-    }
-
-    table.summary-table tr.total-row td:last-child {
-      color: var(--accent);
+      padding: 8px 10px;
     }
 
     .amount-in-words {
-      margin-top: 14px;
-      padding: 9px 12px;
-      background: #f5f6f8;
+      margin-top: 12px;
+      padding: 8px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
       font-size: 10px;
       page-break-inside: avoid;
     }
@@ -299,9 +321,9 @@
     .amount-in-words .aw-label {
       font-size: 8.5px;
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
-      color: var(--faint);
+      color: var(--terra);
       margin-right: 8px;
     }
 
@@ -315,19 +337,17 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 24px;
-      margin-top: 20px;
-      padding-top: 14px;
-      border-top: 1px solid var(--rule);
+      margin-top: 16px;
       page-break-inside: avoid;
     }
 
     .bank-details h3 {
       font-size: 8.5px;
       font-weight: 700;
-      letter-spacing: 1.6px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 6px;
+      color: var(--terra);
+      margin-bottom: 5px;
     }
 
     .bank-details p {
@@ -338,19 +358,26 @@
 
     .sign-row {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: flex-end;
       margin-top: 26px;
       page-break-inside: avoid;
     }
 
+    .terms-note {
+      font-size: 8.5px;
+      color: var(--muted);
+      max-width: 55%;
+    }
+
     .signatory {
       text-align: center;
-      min-width: 200px;
+      min-width: 210px;
     }
 
     .signatory .for-firm {
       font-size: 10.5px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .signatory .sign-space {
@@ -360,8 +387,8 @@
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 5px;
-      font-size: 9px;
-      letter-spacing: 1.2px;
+      font-size: 8.5px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--muted);
     }
@@ -369,12 +396,11 @@
     .legal-footer {
       display: flex;
       justify-content: space-between;
-      margin-top: 22px;
-      padding-top: 10px;
-      border-top: 1px solid var(--rule);
+      margin-top: 18px;
+      padding-top: 9px;
+      border-top: 3px solid var(--terra);
       font-size: 8.5px;
-      color: var(--faint);
-      letter-spacing: 0.4px;
+      color: var(--muted);
     }
 
     /* Keep payment, signature and legal footer together across page breaks */
@@ -386,7 +412,7 @@
     @media print {
       @page {
         size: A4;
-        margin: 12mm;
+        margin: 11mm;
       }
 
       body {
@@ -398,19 +424,37 @@
         margin: 0;
         padding: 0;
         border: none;
+        border-top: 5px solid var(--terra);
+        padding-top: 14px;
       }
 
-      .parties {
-        padding: 12px 0 14px;
+      .masthead {
+        margin-bottom: 12px;
+      }
+
+      .party {
+        margin-bottom: 12px;
+      }
+
+      table.items tbody td {
+        padding: 5px 8px;
+      }
+
+      .totals-wrap {
+        margin-top: 8px;
+      }
+
+      .amount-in-words {
+        margin-top: 8px;
+        padding: 6px 0;
       }
 
       .payment-row {
-        margin-top: 12px;
-        padding-top: 10px;
+        margin-top: 10px;
       }
 
       .sign-row {
-        margin-top: 12px;
+        margin-top: 14px;
       }
 
       .signatory .sign-space {
@@ -418,7 +462,7 @@
       }
 
       .legal-footer {
-        margin-top: 12px;
+        margin-top: 10px;
       }
     }
   </style>
@@ -439,31 +483,34 @@
           </div>
         </div>
       </div>
-      <div class="doc-block">
-        <span class="doc-stamp">Tax Invoice</span>
-        <div class="doc-meta">
-          <div class="row"><span class="label">Invoice No</span><span class="value accent">{{BILL_NUMBER}}</span></div>
-          <div class="row"><span class="label">Date</span><span class="value">{{BILL_DATE}}</span></div>
-          <div class="row"><span class="label">Tax</span><span class="value">{{TAX_TYPE}}</span></div>
+      <div class="payable-card">
+        <div class="pc-label">Total Payable</div>
+        <div class="pc-amount">&#8377;{{TOTAL}}</div>
+        <div class="pc-meta">
+          <div><span class="label">Invoice No</span><span class="value">{{BILL_NUMBER}}</span></div>
+          <div><span class="label">Date</span><span class="value">{{BILL_DATE}}</span></div>
         </div>
       </div>
     </div>
 
-    <div class="parties">
-      <div class="party">
-        <div class="eyebrow">Bill To</div>
-        <div class="name">{{CUSTOMER_NAME}}</div>
-        <p>{{CUSTOMER_ADDRESS}}</p>
-        <p class="gstin">GSTIN: {{CUSTOMER_GST}}</p>
-        {{DELIVERY_ADDRESS}}
-      </div>
+    <div class="title-strip">
+      <div class="doc-title">Tax <span>Invoice</span></div>
+      <div class="tax-chip">{{TAX_TYPE}}</div>
+    </div>
+
+    <div class="party">
+      <div class="eyebrow">Billed To</div>
+      <div class="name">{{CUSTOMER_NAME}}</div>
+      <p>{{CUSTOMER_ADDRESS}}</p>
+      <p class="gstin">GSTIN: {{CUSTOMER_GST}}</p>
+      {{DELIVERY_ADDRESS}}
     </div>
 
     <table class="items">
       <thead>
         <tr>
           <th class="text-center" style="width: 4%;">#</th>
-          <th style="width: 34%;">Item</th>
+          <th style="width: 34%;">Description of Goods</th>
           <th style="width: 8%;">HSN</th>
           <th class="text-center" style="width: 8%;">Qty</th>
           <th class="text-right" style="width: 11%;">Rate</th>
@@ -480,13 +527,13 @@
     <div class="totals-wrap">
       <table class="summary-table">
         <tr>
-          <td>Subtotal:</td>
-          <td>₹{{SUBTOTAL}}</td>
+          <td>Taxable Value:</td>
+          <td>&#8377;{{SUBTOTAL}}</td>
         </tr>
         {{TAX_ROWS}}
         <tr class="total-row">
-          <td>Grand Total:</td>
-          <td>₹{{TOTAL}}</td>
+          <td>Total Payable:</td>
+          <td>&#8377;{{TOTAL}}</td>
         </tr>
       </table>
     </div>
@@ -503,6 +550,8 @@
       </div>
 
       <div class="sign-row">
+        <span class="terms-note">Certified that the particulars given above are true and correct. Goods once
+          sold will not be taken back or exchanged.</span>
         <div class="signatory">
           <div class="for-firm">For {{COMPANY_NAME}}</div>
           <div class="sign-space"></div>

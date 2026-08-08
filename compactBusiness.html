@@ -39,6 +39,23 @@
       print-color-adjust: exact;
     }
 
+
+    /* Hard formatting: dynamic fragments ({{ITEMS_TABLE}} rows, {{TAX_ROWS}},
+
+       bank/UPI/delivery blocks) are injected with their own markup and inline
+
+       styles — force every element into the template's font stack so DB values
+
+       render identically to the static labels. */
+
+    body,
+
+    body * {
+
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+
+    }
+
     .sheet {
       max-width: 820px;
       margin: 24px auto;

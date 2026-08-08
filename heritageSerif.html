@@ -1,0 +1,383 @@
+<!--
+@template-name: Heritage Serif
+@template-description: Centered small-caps masthead on ivory between double gold rules — the old bill-book, set properly
+@template-category: Heritage
+@template-author: @AyushAggarwal1
+@template-version: 1.0
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
+  <style>
+    /* ------------------------------------------------------------------
+       Heritage Serif — symmetric ivory sheet, espresso ink, gold rules.
+       Everything hangs from a centered masthead, like a letterpress
+       bill-book head. "Particulars", not "Description".
+       ------------------------------------------------------------------ */
+    :root {
+      --ink: #2e2418;
+      --muted: #7a6a55;
+      --gold: #a8843c;
+      --gold-soft: #cbb27c;
+      --rule: #e3dac6;
+      --tint: #f8f3e7;
+      --ivory: #fffdf6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Cambria, Georgia, "Times New Roman", serif;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--ink);
+      background: #eae3d3;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .sheet {
+      max-width: 820px;
+      margin: 24px auto;
+      background: var(--ivory);
+      border: 1px solid #d8cfba;
+      padding: 34px 46px 40px;
+    }
+
+    /* ---------- masthead ---------- */
+    .masthead {
+      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 3px double var(--gold);
+    }
+
+    .profile-photo {
+      display: block;
+      height: 48px;
+      width: auto;
+      max-width: 170px;
+      object-fit: contain;
+      margin: 0 auto 8px;
+    }
+
+    .firm-name {
+      font-size: 23px;
+      font-weight: 700;
+      font-variant: small-caps;
+      letter-spacing: 2.5px;
+      color: var(--ink);
+    }
+    .firm-meta { margin-top: 4px; font-size: 9.5px; color: var(--muted); line-height: 1.6; }
+    .firm-meta p { margin: 0; }
+    .firm-meta .gstin { color: var(--ink); font-weight: 700; letter-spacing: 1px; }
+
+    /* ---------- document title ---------- */
+    .doc-title-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 16px 0 12px;
+    }
+    .doc-title-row .line { flex: 1; border-top: 1px solid var(--gold-soft); }
+    .doc-title {
+      font-size: 14px;
+      font-weight: 700;
+      font-variant: small-caps;
+      letter-spacing: 6px;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .meta-cell .label {
+      display: block;
+      font-size: 9px;
+      font-variant: small-caps;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+    .meta-cell .value { font-size: 11.5px; font-weight: 700; }
+
+    /* ---------- bill to ---------- */
+    .party { margin: 16px 0; max-width: 62%; }
+    .eyebrow {
+      font-size: 10px;
+      font-variant: small-caps;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .party .name { font-size: 13px; font-weight: 700; }
+    .party p { margin: 1px 0 0; color: var(--muted); }
+    .party .gstin { color: var(--ink); font-weight: 700; }
+
+    /* ---------- items ---------- */
+    table.items {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+
+    table.items thead { display: table-header-group; }
+
+    table.items thead th {
+      background: var(--tint);
+      color: var(--ink);
+      font-size: 10px;
+      font-variant: small-caps;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: left;
+      padding: 7px 8px;
+      border-top: 2px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    table.items tbody td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 10.5px;
+    }
+
+    table.items tbody tr { page-break-inside: avoid; }
+    table.items tbody td:nth-child(2) { font-weight: 600; }
+
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    th.text-center { text-align: center; }
+    th.text-right { text-align: right; }
+
+    /* ---------- totals ---------- */
+    .totals-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px;
+      page-break-inside: avoid;
+    }
+
+    table.summary-table {
+      width: 300px;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+    table.summary-table td { padding: 4px 10px; font-size: 11px; }
+    table.summary-table td:first-child { color: var(--muted); }
+    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+    table.summary-table tr.total-row td {
+      background: var(--tint);
+      border-top: 3px double var(--gold);
+      color: var(--ink);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 8px 10px;
+    }
+
+    .amount-in-words {
+      margin-top: 12px;
+      padding: 8px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      font-size: 10.5px;
+      page-break-inside: avoid;
+    }
+    .amount-in-words .aw-label {
+      font-size: 10px;
+      font-variant: small-caps;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-right: 8px;
+    }
+    .amount-in-words strong { font-weight: 600; font-style: italic; }
+
+    /* ---------- payment + signature ---------- */
+    .payment-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      margin-top: 16px;
+      page-break-inside: avoid;
+    }
+
+    .bank-details h3 {
+      font-size: 10px;
+      font-variant: small-caps;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .bank-details p { color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+    .sign-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-top: 26px;
+      page-break-inside: avoid;
+    }
+
+    .declaration {
+      font-size: 9px;
+      font-style: italic;
+      color: var(--muted);
+      max-width: 46%;
+    }
+
+    .signatory { text-align: center; min-width: 210px; }
+    .signatory .for-firm { font-size: 10.5px; font-weight: 700; }
+    .signatory .sign-space { height: 52px; }
+    .signatory .sign-line {
+      border-top: 1px solid var(--ink);
+      padding-top: 5px;
+      font-size: 9.5px;
+      font-variant: small-caps;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+    }
+
+    .legal-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 9px;
+      border-top: 3px double var(--gold);
+      font-size: 8.5px;
+      color: var(--muted);
+    }
+
+    .doc-tail { page-break-inside: avoid; }
+
+    /* ---------- print ---------- */
+    @media print {
+      @page { size: A4; margin: 11mm; }
+      body { background: #ffffff; }
+      .sheet { max-width: 100%; margin: 0; padding: 0; border: none; background: transparent; }
+      .party { margin: 12px 0; }
+      table.items tbody td { padding: 5px 8px; }
+      .totals-wrap { margin-top: 8px; }
+      .amount-in-words { margin-top: 8px; padding: 6px 0; }
+      .payment-row { margin-top: 10px; }
+      .sign-row { margin-top: 14px; }
+      .signatory .sign-space { height: 40px; }
+      .legal-footer { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+
+    <div class="masthead">
+      {{PROFILE_PHOTO}}
+      <div class="firm-name">{{COMPANY_NAME}}</div>
+      <div class="firm-meta">
+        <p>{{COMPANY_ADDRESS}}</p>
+        {{COMPANY_PHONE}}
+        <p class="gstin">GSTIN: {{COMPANY_GST}}</p>
+      </div>
+    </div>
+
+    <div class="doc-title-row">
+      <span class="line"></span>
+      <span class="doc-title">Tax Invoice</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-cell">
+        <span class="label">Invoice No</span>
+        <span class="value">{{BILL_NUMBER}}</span>
+      </div>
+      <div class="meta-cell">
+        <span class="label">Dated</span>
+        <span class="value">{{BILL_DATE}}</span>
+      </div>
+      <div class="meta-cell">
+        <span class="label">Tax</span>
+        <span class="value">{{TAX_TYPE}}</span>
+      </div>
+    </div>
+
+    <div class="party">
+      <div class="eyebrow">Messrs</div>
+      <div class="name">{{CUSTOMER_NAME}}</div>
+      <p>{{CUSTOMER_ADDRESS}}</p>
+      <p class="gstin">GSTIN: {{CUSTOMER_GST}}</p>
+      {{DELIVERY_ADDRESS}}
+    </div>
+
+    <table class="items">
+      <thead>
+        <tr>
+          <th class="text-center" style="width: 4%;">#</th>
+          <th style="width: 34%;">Particulars</th>
+          <th style="width: 8%;">HSN</th>
+          <th class="text-center" style="width: 8%;">Qty</th>
+          <th class="text-right" style="width: 11%;">Rate</th>
+          <th class="text-right" style="width: 13%;">Amount</th>
+          <th class="text-center" style="width: 8%;">Tax</th>
+          <th class="text-right" style="width: 14%;">Tax Amt</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ITEMS_TABLE}}
+      </tbody>
+    </table>
+
+    <div class="totals-wrap">
+      <table class="summary-table">
+        <tr>
+          <td>Subtotal:</td>
+          <td>₹{{SUBTOTAL}}</td>
+        </tr>
+        {{TAX_ROWS}}
+        <tr class="total-row">
+          <td>Grand Total:</td>
+          <td>₹{{TOTAL}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="amount-in-words">
+      <span class="aw-label">Amount Chargeable (in words)</span>
+      <strong>{{AMOUNT_IN_WORDS}}</strong>
+    </div>
+
+    <div class="doc-tail">
+      <div class="payment-row">
+        {{BANK_DETAILS}}
+        {{UPI_QR}}
+      </div>
+
+      <div class="sign-row">
+        <span class="declaration">Certified that the particulars given above are true and correct.</span>
+        <div class="signatory">
+          <div class="for-firm">For {{COMPANY_NAME}}</div>
+          <div class="sign-space"></div>
+          <div class="sign-line">Authorised Signatory</div>
+        </div>
+      </div>
+
+      <div class="legal-footer">
+        <span>E. &amp; O. E.</span>
+        <span>This is a computer-generated invoice.</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

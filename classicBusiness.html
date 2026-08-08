@@ -56,9 +56,10 @@
     .masthead { text-align: center; padding-bottom: 14px; }
 
     .profile-photo {
-      width: 58px;
       height: 58px;
-      object-fit: cover;
+      width: auto;
+      max-width: 210px;
+      object-fit: contain;
       border: 1px solid var(--rule);
       margin-bottom: 10px;
     }
@@ -261,7 +262,7 @@
       body { background: var(--paper); }
       .sheet { max-width: 100%; margin: 0; padding: 0; }
       .frame-inner { padding: 18px 24px; }
-      .profile-photo { width: 44px; height: 44px; margin-bottom: 6px; }
+      .profile-photo { height: 44px; width: auto; max-width: 160px; margin-bottom: 6px; }
       .firm-name { font-size: 20px; }
       .doc-title { margin-top: 10px; }
       .meta-strip { padding: 10px 0 2px; }

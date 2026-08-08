@@ -1,12 +1,11 @@
-<!--
-@template-name: Modern Rail
-@template-description: Deep teal rail down the left edge with a vertical wordmark — studio stationery for contemporary firms
-@template-category: Modern
-@template-author: @AyushAggarwal1
-@template-version: 1.0
--->
+<!-- @template-name: Modern Rail -->
+<!-- @template-description: Deep teal rail down the left edge with a vertical wordmark — studio stationery for contemporary firms -->
+<!-- @template-category: Modern -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 1.0 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -25,7 +24,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
@@ -72,7 +75,12 @@
       white-space: nowrap;
     }
 
-    .identity { display: flex; gap: 13px; min-width: 0; align-items: flex-start; }
+    .identity {
+      display: flex;
+      gap: 13px;
+      min-width: 0;
+      align-items: flex-start;
+    }
 
     .profile-photo {
       height: 52px;
@@ -82,10 +90,28 @@
       border: 1px solid var(--rule);
     }
 
-    .firm-name { font-size: 19px; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.2px; }
-    .firm-meta { margin-top: 4px; font-size: 9.5px; color: var(--muted); line-height: 1.55; }
-    .firm-meta p { margin: 0; }
-    .firm-meta .gstin { color: var(--ink); font-weight: 700; }
+    .firm-name {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--teal-deep);
+      letter-spacing: -0.2px;
+    }
+
+    .firm-meta {
+      margin-top: 4px;
+      font-size: 9.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .firm-meta p {
+      margin: 0;
+    }
+
+    .firm-meta .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     .meta-stack {
       margin-left: auto;
@@ -95,7 +121,11 @@
       padding-left: 20px;
       font-variant-numeric: tabular-nums;
     }
-    .meta-item + .meta-item { margin-top: 8px; }
+
+    .meta-item+.meta-item {
+      margin-top: 8px;
+    }
+
     .meta-item .label {
       display: block;
       font-size: 7.5px;
@@ -104,10 +134,18 @@
       text-transform: uppercase;
       color: var(--teal);
     }
-    .meta-item .value { font-size: 12px; font-weight: 700; }
+
+    .meta-item .value {
+      font-size: 12px;
+      font-weight: 700;
+    }
 
     /* ---------- bill to ---------- */
-    .party { margin: 18px 0; max-width: 62%; }
+    .party {
+      margin: 18px 0;
+      max-width: 62%;
+    }
+
     .eyebrow {
       font-size: 8.5px;
       font-weight: 700;
@@ -116,9 +154,21 @@
       color: var(--teal);
       margin-bottom: 6px;
     }
-    .party .name { font-size: 13px; font-weight: 700; }
-    .party p { margin: 1px 0 0; color: var(--muted); }
-    .party .gstin { color: var(--ink); font-weight: 700; }
+
+    .party .name {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .party p {
+      margin: 1px 0 0;
+      color: var(--muted);
+    }
+
+    .party .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -127,7 +177,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       background: var(--tint);
@@ -147,13 +199,29 @@
       font-size: 10.5px;
     }
 
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 600; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody td:nth-child(2) {
+      font-weight: 600;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- totals ---------- */
     .totals-wrap {
@@ -168,9 +236,21 @@
       border-collapse: collapse;
       font-variant-numeric: tabular-nums;
     }
-    table.summary-table td { padding: 4px 10px; font-size: 11px; }
-    table.summary-table td:first-child { color: var(--muted); }
-    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+
+    table.summary-table td {
+      padding: 4px 10px;
+      font-size: 11px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
     table.summary-table tr.total-row td {
       background: var(--teal);
       color: #ffffff;
@@ -187,6 +267,7 @@
       font-size: 10.5px;
       page-break-inside: avoid;
     }
+
     .amount-in-words .aw-label {
       font-size: 8.5px;
       font-weight: 700;
@@ -195,7 +276,10 @@
       color: var(--teal);
       margin-right: 8px;
     }
-    .amount-in-words strong { font-weight: 600; }
+
+    .amount-in-words strong {
+      font-weight: 600;
+    }
 
     /* ---------- payment + signature ---------- */
     .payment-row {
@@ -215,7 +299,12 @@
       color: var(--teal);
       margin-bottom: 5px;
     }
-    .bank-details p { color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
 
     .sign-row {
       display: flex;
@@ -226,11 +315,26 @@
       page-break-inside: avoid;
     }
 
-    .prepared-note { font-size: 8.5px; color: var(--muted); max-width: 46%; }
+    .prepared-note {
+      font-size: 8.5px;
+      color: var(--muted);
+      max-width: 46%;
+    }
 
-    .signatory { text-align: center; min-width: 210px; }
-    .signatory .for-firm { font-size: 10.5px; font-weight: 700; }
-    .signatory .sign-space { height: 52px; }
+    .signatory {
+      text-align: center;
+      min-width: 210px;
+    }
+
+    .signatory .for-firm {
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .signatory .sign-space {
+      height: 52px;
+    }
+
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 5px;
@@ -250,12 +354,21 @@
       color: var(--muted);
     }
 
-    .doc-tail { page-break-inside: avoid; }
+    .doc-tail {
+      page-break-inside: avoid;
+    }
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 11mm; }
-      body { background: var(--paper); }
+      @page {
+        size: A4;
+        margin: 11mm;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
       .sheet {
         max-width: 100%;
         margin: 0;
@@ -263,18 +376,46 @@
         border-left: 6px solid var(--teal);
         padding: 0 0 0 16px;
       }
-      .header { margin-bottom: 12px; }
-      .party { margin: 12px 0; }
-      table.items tbody td { padding: 5px 8px; }
-      .totals-wrap { margin-top: 8px; }
-      .amount-in-words { margin-top: 8px; }
-      .payment-row { margin-top: 10px; }
-      .sign-row { margin-top: 14px; }
-      .signatory .sign-space { height: 40px; }
-      .legal-footer { margin-top: 10px; }
+
+      .header {
+        margin-bottom: 12px;
+      }
+
+      .party {
+        margin: 12px 0;
+      }
+
+      table.items tbody td {
+        padding: 5px 8px;
+      }
+
+      .totals-wrap {
+        margin-top: 8px;
+      }
+
+      .amount-in-words {
+        margin-top: 8px;
+      }
+
+      .payment-row {
+        margin-top: 10px;
+      }
+
+      .sign-row {
+        margin-top: 14px;
+      }
+
+      .signatory .sign-space {
+        height: 40px;
+      }
+
+      .legal-footer {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
 
@@ -377,4 +518,5 @@
 
   </div>
 </body>
+
 </html>

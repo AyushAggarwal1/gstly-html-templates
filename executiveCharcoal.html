@@ -1,12 +1,11 @@
-<!--
-@template-name: Executive Charcoal
-@template-description: Charcoal letterhead band with bronze detailing — boardroom stationery for firms that sign in fountain pen
-@template-category: Premium
-@template-author: @AyushAggarwal1
-@template-version: 1.0
--->
+<!-- @template-name: Executive Charcoal -->
+<!-- @template-description: Charcoal letterhead band with bronze detailing — boardroom stationery for firms that sign in fountain pen -->
+<!-- @template-category: Premium -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 1.0 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -26,7 +25,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
@@ -47,7 +50,10 @@
     }
 
     /* Sections share horizontal padding so the masthead can bleed full width */
-    .pad { padding-left: 44px; padding-right: 44px; }
+    .pad {
+      padding-left: 44px;
+      padding-right: 44px;
+    }
 
     /* ---------- masthead ---------- */
     .masthead {
@@ -61,7 +67,11 @@
       border-bottom: 3px solid var(--bronze);
     }
 
-    .identity { display: flex; gap: 14px; min-width: 0; }
+    .identity {
+      display: flex;
+      gap: 14px;
+      min-width: 0;
+    }
 
     .profile-photo {
       height: 52px;
@@ -73,12 +83,35 @@
       border: 1px solid var(--bronze-soft);
     }
 
-    .firm-name { font-size: 21px; font-weight: 700; letter-spacing: 0.4px; color: #ffffff; }
-    .firm-meta { margin-top: 5px; font-size: 9.5px; line-height: 1.55; color: #b9b7ae; }
-    .firm-meta p { margin: 0; }
-    .firm-meta .gstin { color: var(--bronze-soft); font-weight: 700; letter-spacing: 0.5px; }
+    .firm-name {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: #ffffff;
+    }
 
-    .doc-id { text-align: right; flex-shrink: 0; }
+    .firm-meta {
+      margin-top: 5px;
+      font-size: 9.5px;
+      line-height: 1.55;
+      color: #b9b7ae;
+    }
+
+    .firm-meta p {
+      margin: 0;
+    }
+
+    .firm-meta .gstin {
+      color: var(--bronze-soft);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .doc-id {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
     .doc-title {
       font-size: 13px;
       font-weight: 700;
@@ -86,6 +119,7 @@
       text-transform: uppercase;
       color: var(--bronze-soft);
     }
+
     .doc-sub {
       margin-top: 4px;
       font-size: 8.5px;
@@ -100,8 +134,17 @@
       border-bottom: 1px solid var(--rule);
       font-variant-numeric: tabular-nums;
     }
-    .meta-cell { flex: 1; padding: 12px 18px 12px 0; }
-    .meta-cell + .meta-cell { border-left: 1px solid var(--rule); padding-left: 18px; }
+
+    .meta-cell {
+      flex: 1;
+      padding: 12px 18px 12px 0;
+    }
+
+    .meta-cell+.meta-cell {
+      border-left: 1px solid var(--rule);
+      padding-left: 18px;
+    }
+
     .meta-label {
       font-size: 8px;
       font-weight: 700;
@@ -109,10 +152,19 @@
       text-transform: uppercase;
       color: var(--bronze);
     }
-    .meta-value { margin-top: 2px; font-size: 12.5px; font-weight: 700; }
+
+    .meta-value {
+      margin-top: 2px;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
 
     /* ---------- bill to ---------- */
-    .party { margin: 18px 0; max-width: 62%; }
+    .party {
+      margin: 18px 0;
+      max-width: 62%;
+    }
+
     .eyebrow {
       font-size: 8.5px;
       font-weight: 700;
@@ -121,9 +173,21 @@
       color: var(--bronze);
       margin-bottom: 6px;
     }
-    .party .name { font-size: 13px; font-weight: 700; }
-    .party p { margin: 1px 0 0; color: var(--muted); }
-    .party .gstin { color: var(--ink); font-weight: 700; }
+
+    .party .name {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .party p {
+      margin: 1px 0 0;
+      color: var(--muted);
+    }
+
+    .party .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -132,7 +196,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       background: var(--tint);
@@ -153,13 +219,29 @@
       font-size: 10.5px;
     }
 
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 500; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody td:nth-child(2) {
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- totals ---------- */
     .totals-wrap {
@@ -174,9 +256,21 @@
       border-collapse: collapse;
       font-variant-numeric: tabular-nums;
     }
-    table.summary-table td { padding: 4px 10px; font-size: 11px; }
-    table.summary-table td:first-child { color: var(--muted); }
-    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+
+    table.summary-table td {
+      padding: 4px 10px;
+      font-size: 11px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
     table.summary-table tr.total-row td {
       background: var(--charcoal);
       color: #ffffff;
@@ -185,7 +279,10 @@
       font-weight: 700;
       padding: 8px 12px;
     }
-    table.summary-table tr.total-row td:first-child { color: var(--bronze-soft); }
+
+    table.summary-table tr.total-row td:first-child {
+      color: var(--bronze-soft);
+    }
 
     .amount-in-words {
       margin-top: 12px;
@@ -195,6 +292,7 @@
       font-size: 10.5px;
       page-break-inside: avoid;
     }
+
     .amount-in-words .aw-label {
       font-size: 8.5px;
       font-weight: 700;
@@ -203,7 +301,11 @@
       color: var(--bronze);
       margin-right: 8px;
     }
-    .amount-in-words strong { font-weight: 600; font-style: italic; }
+
+    .amount-in-words strong {
+      font-weight: 600;
+      font-style: italic;
+    }
 
     /* ---------- payment + signature ---------- */
     .payment-row {
@@ -223,7 +325,12 @@
       color: var(--bronze);
       margin-bottom: 5px;
     }
-    .bank-details p { color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
 
     .sign-row {
       display: flex;
@@ -234,11 +341,26 @@
       page-break-inside: avoid;
     }
 
-    .declaration { font-size: 8.5px; color: var(--muted); max-width: 46%; }
+    .declaration {
+      font-size: 8.5px;
+      color: var(--muted);
+      max-width: 46%;
+    }
 
-    .signatory { text-align: center; min-width: 210px; }
-    .signatory .for-firm { font-size: 10.5px; font-weight: 700; }
-    .signatory .sign-space { height: 52px; }
+    .signatory {
+      text-align: center;
+      min-width: 210px;
+    }
+
+    .signatory .for-firm {
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .signatory .sign-space {
+      height: 52px;
+    }
+
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 5px;
@@ -258,26 +380,73 @@
       color: var(--muted);
     }
 
-    .doc-tail { page-break-inside: avoid; }
+    .doc-tail {
+      page-break-inside: avoid;
+    }
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 11mm; }
-      body { background: var(--paper); }
-      .sheet { max-width: 100%; margin: 0; border: none; padding-bottom: 0; }
-      .pad { padding-left: 0; padding-right: 0; }
-      .masthead { padding: 18px 20px 16px; }
-      .party { margin: 13px 0; }
-      table.items tbody td { padding: 5px 8px; }
-      .totals-wrap { margin-top: 8px; }
-      .amount-in-words { margin-top: 8px; padding: 6px 0; }
-      .payment-row { margin-top: 10px; }
-      .sign-row { margin-top: 14px; }
-      .signatory .sign-space { height: 40px; }
-      .legal-footer { margin-top: 10px; }
+      @page {
+        size: A4;
+        margin: 11mm;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
+      .sheet {
+        max-width: 100%;
+        margin: 0;
+        border: none;
+        padding-bottom: 0;
+      }
+
+      .pad {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .masthead {
+        padding: 18px 20px 16px;
+      }
+
+      .party {
+        margin: 13px 0;
+      }
+
+      table.items tbody td {
+        padding: 5px 8px;
+      }
+
+      .totals-wrap {
+        margin-top: 8px;
+      }
+
+      .amount-in-words {
+        margin-top: 8px;
+        padding: 6px 0;
+      }
+
+      .payment-row {
+        margin-top: 10px;
+      }
+
+      .sign-row {
+        margin-top: 14px;
+      }
+
+      .signatory .sign-space {
+        height: 40px;
+      }
+
+      .legal-footer {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
 
@@ -384,4 +553,5 @@
 
   </div>
 </body>
+
 </html>

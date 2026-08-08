@@ -1,12 +1,11 @@
-<!--
-@template-name: Compact Business
-@template-description: Dense, dispatch-desk layout that fits the most line items per page without losing legibility
-@template-category: Compact
-@template-author: @AyushAggarwal1
-@template-version: 2.0
--->
+<!-- @template-name: Compact Business -->
+<!-- @template-description: Dense, dispatch-desk layout that fits the most line items per page without losing legibility -->
+<!-- @template-category: Compact -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 2.0 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -24,7 +23,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -54,7 +57,12 @@
       padding: 12px 20px;
     }
 
-    .strip .identity { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .strip .identity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
 
     .profile-photo {
       height: 34px;
@@ -64,7 +72,12 @@
       border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
-    .strip .firm-name { font-size: 14px; font-weight: 700; letter-spacing: 0.2px; }
+    .strip .firm-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
     .strip .doc-kind {
       font-size: 8px;
       letter-spacing: 2.4px;
@@ -73,7 +86,13 @@
       margin-top: 1px;
     }
 
-    .strip .doc-meta { display: flex; gap: 18px; text-align: right; flex-shrink: 0; }
+    .strip .doc-meta {
+      display: flex;
+      gap: 18px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
     .strip .doc-meta .label {
       display: block;
       font-size: 7.5px;
@@ -81,9 +100,16 @@
       text-transform: uppercase;
       opacity: 0.65;
     }
-    .strip .doc-meta .value { font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
-    .body-pad { padding: 16px 20px 20px; }
+    .strip .doc-meta .value {
+      font-size: 11px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .body-pad {
+      padding: 16px 20px 20px;
+    }
 
     /* ---------- firm + parties ---------- */
     .info-grid {
@@ -93,8 +119,15 @@
       border-bottom: 1px solid var(--rule);
     }
 
-    .info-col { flex: 1; min-width: 0; }
-    .info-col + .info-col { border-left: 1px solid var(--rule); padding-left: 20px; }
+    .info-col {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .info-col+.info-col {
+      border-left: 1px solid var(--rule);
+      padding-left: 20px;
+    }
 
     .info-col .eyebrow {
       font-size: 7.5px;
@@ -104,9 +137,22 @@
       color: var(--muted);
       margin-bottom: 4px;
     }
-    .info-col .name { font-size: 11px; font-weight: 700; }
-    .info-col p { margin: 1px 0 0; color: var(--muted); font-size: 9.5px; }
-    .info-col .gstin { color: var(--ink); font-weight: 600; }
+
+    .info-col .name {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .info-col p {
+      margin: 1px 0 0;
+      color: var(--muted);
+      font-size: 9.5px;
+    }
+
+    .info-col .gstin {
+      color: var(--ink);
+      font-weight: 600;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -116,7 +162,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       font-size: 7.5px;
@@ -135,14 +183,33 @@
       font-size: 9.5px;
     }
 
-    table.items tbody tr:nth-child(even) td { background: var(--tint); }
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 500; }
+    table.items tbody tr:nth-child(even) td {
+      background: var(--tint);
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
+
+    table.items tbody td:nth-child(2) {
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- totals ---------- */
     .after-table {
@@ -160,6 +227,7 @@
       color: var(--muted);
       padding-top: 4px;
     }
+
     .amount-in-words .aw-label {
       display: block;
       font-size: 7.5px;
@@ -168,7 +236,11 @@
       text-transform: uppercase;
       margin-bottom: 3px;
     }
-    .amount-in-words strong { color: var(--ink); font-weight: 600; }
+
+    .amount-in-words strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
 
     table.summary-table {
       width: 250px;
@@ -176,9 +248,21 @@
       font-variant-numeric: tabular-nums;
       flex-shrink: 0;
     }
-    table.summary-table td { padding: 3px 0; font-size: 10px; }
-    table.summary-table td:first-child { color: var(--muted); }
-    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+
+    table.summary-table td {
+      padding: 3px 0;
+      font-size: 10px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
     table.summary-table tr.total-row td {
       border-top: 2px solid var(--slate);
       padding-top: 6px;
@@ -207,7 +291,12 @@
       color: var(--muted);
       margin-bottom: 4px;
     }
-    .bank-details p { color: var(--muted); font-size: 9.5px; line-height: 1.55; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.55;
+    }
 
     .sign-row {
       display: flex;
@@ -215,9 +304,21 @@
       margin-top: 18px;
       page-break-inside: avoid;
     }
-    .signatory { text-align: center; min-width: 180px; }
-    .signatory .for-firm { font-size: 9.5px; font-weight: 600; }
-    .signatory .sign-space { height: 42px; }
+
+    .signatory {
+      text-align: center;
+      min-width: 180px;
+    }
+
+    .signatory .for-firm {
+      font-size: 9.5px;
+      font-weight: 600;
+    }
+
+    .signatory .sign-space {
+      height: 42px;
+    }
+
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 4px;
@@ -239,16 +340,30 @@
     }
 
     /* Keep payment, signature and legal footer together across page breaks */
-    .doc-tail { page-break-inside: avoid; }
+    .doc-tail {
+      page-break-inside: avoid;
+    }
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 10mm; }
-      body { background: var(--paper); }
-      .sheet { max-width: 100%; margin: 0; border: none; }
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
+      .sheet {
+        max-width: 100%;
+        margin: 0;
+        border: none;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
 
@@ -345,4 +460,5 @@
     </div>
   </div>
 </body>
+
 </html>

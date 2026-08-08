@@ -1,12 +1,11 @@
-<!--
-@template-name: Simple Grid
-@template-description: Pre-printed form aesthetic — every zone is a ruled cell with corner labels and a three-part signature strip
-@template-category: Structured
-@template-author: @AyushAggarwal1
-@template-version: 2.0
--->
+<!-- @template-name: Simple Grid -->
+<!-- @template-description: Pre-printed form aesthetic — every zone is a ruled cell with corner labels and a three-part signature strip -->
+<!-- @template-category: Structured -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 2.0 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -25,7 +24,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -44,7 +47,9 @@
       padding: 36px 40px;
     }
 
-    .form { border: 1.5px solid var(--ink); }
+    .form {
+      border: 1.5px solid var(--ink);
+    }
 
     .cell-label {
       display: block;
@@ -78,10 +83,26 @@
       border: 1px solid var(--light-grid);
     }
 
-    .firm-name { font-size: 18px; font-weight: 700; letter-spacing: -0.2px; }
-    .firm-meta { margin-top: 4px; font-size: 9px; color: var(--muted); }
-    .firm-meta p { margin: 0 0 1px; }
-    .firm-meta .gstin { color: var(--ink); font-weight: 700; }
+    .firm-name {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .firm-meta {
+      margin-top: 4px;
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    .firm-meta p {
+      margin: 0 0 1px;
+    }
+
+    .firm-meta .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     .head-doc {
       width: 200px;
@@ -96,9 +117,21 @@
       border-bottom: 1px solid var(--light-grid);
       flex: 1;
     }
-    .head-doc .doc-cell:last-child { border-bottom: none; }
-    .head-doc .doc-cell .value { font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
-    .head-doc .doc-cell .value.serial { color: var(--red); letter-spacing: 0.5px; }
+
+    .head-doc .doc-cell:last-child {
+      border-bottom: none;
+    }
+
+    .head-doc .doc-cell .value {
+      font-size: 11px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .head-doc .doc-cell .value.serial {
+      color: var(--red);
+      letter-spacing: 0.5px;
+    }
 
     .doc-title-cell {
       background: var(--tint);
@@ -106,6 +139,7 @@
       padding: 7px 0 !important;
       border-bottom: 1px solid var(--grid) !important;
     }
+
     .doc-title-cell span {
       font-size: 10.5px;
       font-weight: 700;
@@ -119,18 +153,37 @@
       border-bottom: 1.5px solid var(--ink);
     }
 
-    .party-cell { flex: 1.4; min-width: 0; padding: 10px 16px 12px; }
+    .party-cell {
+      flex: 1.4;
+      min-width: 0;
+      padding: 10px 16px 12px;
+    }
 
-    .party-cell .name { font-size: 12px; font-weight: 700; }
-    .party-cell p { margin: 1px 0 0; color: var(--muted); font-size: 9.5px; }
-    .party-cell .gstin { color: var(--ink); font-weight: 700; }
+    .party-cell .name {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .party-cell p {
+      margin: 1px 0 0;
+      color: var(--muted);
+      font-size: 9.5px;
+    }
+
+    .party-cell .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     .tax-cell {
       flex: 0.6;
       border-left: 1px solid var(--grid);
       padding: 10px 12px 12px;
     }
-    .tax-cell .value { font-weight: 700; }
+
+    .tax-cell .value {
+      font-weight: 700;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -139,7 +192,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       font-size: 7.5px;
@@ -162,14 +217,33 @@
     }
 
     table.items th:last-child,
-    table.items td:last-child { border-right: none; }
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 500; }
+    table.items td:last-child {
+      border-right: none;
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
+
+    table.items tbody td:nth-child(2) {
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- words + totals row ---------- */
     .form-totals {
@@ -184,18 +258,39 @@
       padding: 10px 16px;
       border-right: 1px solid var(--grid);
     }
-    .words-cell .words { font-size: 10px; font-weight: 600; margin-top: 2px; }
 
-    .totals-cell { width: 290px; flex-shrink: 0; padding: 8px 12px; }
+    .words-cell .words {
+      font-size: 10px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .totals-cell {
+      width: 290px;
+      flex-shrink: 0;
+      padding: 8px 12px;
+    }
 
     table.summary-table {
       width: 100%;
       border-collapse: collapse;
       font-variant-numeric: tabular-nums;
     }
-    table.summary-table td { padding: 3px 0; font-size: 10px; }
-    table.summary-table td:first-child { color: var(--muted); }
-    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+
+    table.summary-table td {
+      padding: 3px 0;
+      font-size: 10px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
     table.summary-table tr.total-row td {
       border-top: 1.5px solid var(--ink);
       padding-top: 6px;
@@ -203,7 +298,10 @@
       font-weight: 700;
       color: var(--ink);
     }
-    table.summary-table tr.total-row td:last-child { color: var(--red); }
+
+    table.summary-table tr.total-row td:last-child {
+      color: var(--red);
+    }
 
     /* ---------- payment row ---------- */
     .form-payment {
@@ -212,7 +310,12 @@
       page-break-inside: avoid;
     }
 
-    .bank-cell { flex: 1; min-width: 0; padding: 10px 16px 12px; }
+    .bank-cell {
+      flex: 1;
+      min-width: 0;
+      padding: 10px 16px 12px;
+    }
+
     .bank-details h3 {
       font-size: 7.5px;
       font-weight: 700;
@@ -221,7 +324,12 @@
       color: var(--muted);
       margin-bottom: 4px;
     }
-    .bank-details p { color: var(--muted); font-size: 9.5px; line-height: 1.6; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.6;
+    }
 
     .upi-cell {
       flex-shrink: 0;
@@ -244,9 +352,19 @@
       border-right: 1px solid var(--grid);
       text-align: center;
     }
-    .sign-cell:last-child { border-right: none; }
-    .sign-cell .sign-space { height: 44px; }
-    .sign-cell .for-firm { font-size: 9px; font-weight: 700; }
+
+    .sign-cell:last-child {
+      border-right: none;
+    }
+
+    .sign-cell .sign-space {
+      height: 44px;
+    }
+
+    .sign-cell .for-firm {
+      font-size: 9px;
+      font-weight: 700;
+    }
 
     .legal-footer {
       display: flex;
@@ -259,12 +377,24 @@
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 11mm; }
-      body { background: var(--paper); }
-      .sheet { max-width: 100%; margin: 0; padding: 0; }
+      @page {
+        size: A4;
+        margin: 11mm;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
+      .sheet {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
     <div class="form">
@@ -380,4 +510,5 @@
 
   </div>
 </body>
+
 </html>

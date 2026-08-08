@@ -1,12 +1,11 @@
-<!--
-@template-name: Premier Statement
-@template-description: A boxed plum meta panel anchors the header — quiet bureau elegance in engineered small type
-@template-category: Elegant
-@template-author: @AyushAggarwal1
-@template-version: 1.0
--->
+<!-- @template-name: Premier Statement -->
+<!-- @template-description: A boxed plum meta panel anchors the header — quiet bureau elegance in engineered small type -->
+<!-- @template-category: Elegant -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 1.0 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -25,7 +24,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
@@ -54,7 +57,11 @@
       margin-bottom: 18px;
     }
 
-    .identity { display: flex; gap: 12px; min-width: 0; }
+    .identity {
+      display: flex;
+      gap: 12px;
+      min-width: 0;
+    }
 
     .profile-photo {
       height: 50px;
@@ -64,10 +71,28 @@
       border: 1px solid var(--rule);
     }
 
-    .firm-name { font-size: 17px; font-weight: 700; color: var(--plum); letter-spacing: -0.2px; }
-    .firm-meta { margin-top: 4px; font-size: 8.8px; color: var(--muted); line-height: 1.6; }
-    .firm-meta p { margin: 0; }
-    .firm-meta .gstin { color: var(--ink); font-weight: 700; }
+    .firm-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--plum);
+      letter-spacing: -0.2px;
+    }
+
+    .firm-meta {
+      margin-top: 4px;
+      font-size: 8.8px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .firm-meta p {
+      margin: 0;
+    }
+
+    .firm-meta .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     .meta-panel {
       min-width: 232px;
@@ -75,6 +100,7 @@
       border: 1px solid var(--plum);
       font-variant-numeric: tabular-nums;
     }
+
     .meta-panel .panel-head {
       background: var(--plum);
       color: #ffffff;
@@ -85,6 +111,7 @@
       text-align: center;
       padding: 7px 10px;
     }
+
     .panel-row {
       display: flex;
       justify-content: space-between;
@@ -92,7 +119,11 @@
       gap: 12px;
       padding: 7px 12px;
     }
-    .panel-row + .panel-row { border-top: 1px solid var(--rule); }
+
+    .panel-row+.panel-row {
+      border-top: 1px solid var(--rule);
+    }
+
     .panel-row .k {
       font-size: 7.8px;
       font-weight: 700;
@@ -100,10 +131,18 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-    .panel-row .v { font-size: 10.5px; font-weight: 700; }
+
+    .panel-row .v {
+      font-size: 10.5px;
+      font-weight: 700;
+    }
 
     /* ---------- bill to ---------- */
-    .party { margin: 0 0 16px; max-width: 62%; }
+    .party {
+      margin: 0 0 16px;
+      max-width: 62%;
+    }
+
     .eyebrow {
       font-size: 7.8px;
       font-weight: 700;
@@ -112,9 +151,21 @@
       color: var(--plum);
       margin-bottom: 5px;
     }
-    .party .name { font-size: 12px; font-weight: 700; }
-    .party p { margin: 1px 0 0; color: var(--muted); }
-    .party .gstin { color: var(--ink); font-weight: 700; }
+
+    .party .name {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .party p {
+      margin: 1px 0 0;
+      color: var(--muted);
+    }
+
+    .party .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -123,7 +174,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       color: var(--plum);
@@ -143,13 +196,29 @@
       font-size: 9.6px;
     }
 
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 700; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody td:nth-child(2) {
+      font-weight: 700;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- totals ---------- */
     .totals-wrap {
@@ -164,9 +233,21 @@
       border-collapse: collapse;
       font-variant-numeric: tabular-nums;
     }
-    table.summary-table td { padding: 4px 10px; font-size: 10px; }
-    table.summary-table td:first-child { color: var(--muted); }
-    table.summary-table td:last-child { text-align: right; font-weight: 700; }
+
+    table.summary-table td {
+      padding: 4px 10px;
+      font-size: 10px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+    }
+
     table.summary-table tr.total-row td {
       background: var(--plum-tint);
       border-top: 2px solid var(--plum);
@@ -184,6 +265,7 @@
       font-size: 9.6px;
       page-break-inside: avoid;
     }
+
     .amount-in-words .aw-label {
       font-size: 7.8px;
       font-weight: 700;
@@ -192,7 +274,10 @@
       color: var(--plum);
       margin-right: 8px;
     }
-    .amount-in-words strong { font-weight: 700; }
+
+    .amount-in-words strong {
+      font-weight: 700;
+    }
 
     /* ---------- payment + signature ---------- */
     .payment-row {
@@ -212,7 +297,12 @@
       color: var(--plum);
       margin-bottom: 5px;
     }
-    .bank-details p { color: var(--muted); font-size: 9.2px; line-height: 1.65; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 9.2px;
+      line-height: 1.65;
+    }
 
     .sign-row {
       display: flex;
@@ -223,11 +313,26 @@
       page-break-inside: avoid;
     }
 
-    .prepared-note { font-size: 8.2px; color: var(--muted); max-width: 46%; }
+    .prepared-note {
+      font-size: 8.2px;
+      color: var(--muted);
+      max-width: 46%;
+    }
 
-    .signatory { text-align: center; min-width: 210px; }
-    .signatory .for-firm { font-size: 10px; font-weight: 700; }
-    .signatory .sign-space { height: 52px; }
+    .signatory {
+      text-align: center;
+      min-width: 210px;
+    }
+
+    .signatory .for-firm {
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .signatory .sign-space {
+      height: 52px;
+    }
+
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 5px;
@@ -247,25 +352,68 @@
       color: var(--muted);
     }
 
-    .doc-tail { page-break-inside: avoid; }
+    .doc-tail {
+      page-break-inside: avoid;
+    }
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 11mm; }
-      body { background: var(--paper); }
-      .sheet { max-width: 100%; margin: 0; padding: 0; border: none; }
-      .header { margin-bottom: 12px; }
-      .party { margin: 0 0 12px; }
-      table.items tbody td { padding: 5px 8px; }
-      .totals-wrap { margin-top: 8px; }
-      .amount-in-words { margin-top: 8px; padding: 6px 0; }
-      .payment-row { margin-top: 10px; }
-      .sign-row { margin-top: 14px; }
-      .signatory .sign-space { height: 40px; }
-      .legal-footer { margin-top: 10px; }
+      @page {
+        size: A4;
+        margin: 11mm;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
+      .sheet {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      .header {
+        margin-bottom: 12px;
+      }
+
+      .party {
+        margin: 0 0 12px;
+      }
+
+      table.items tbody td {
+        padding: 5px 8px;
+      }
+
+      .totals-wrap {
+        margin-top: 8px;
+      }
+
+      .amount-in-words {
+        margin-top: 8px;
+        padding: 6px 0;
+      }
+
+      .payment-row {
+        margin-top: 10px;
+      }
+
+      .sign-row {
+        margin-top: 14px;
+      }
+
+      .signatory .sign-space {
+        height: 40px;
+      }
+
+      .legal-footer {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
 
@@ -350,7 +498,8 @@
       </div>
 
       <div class="sign-row">
-        <span class="prepared-note">Payment due within the agreed terms. Please quote the invoice number in all correspondence.</span>
+        <span class="prepared-note">Payment due within the agreed terms. Please quote the invoice number in all
+          correspondence.</span>
         <div class="signatory">
           <div class="for-firm">For {{COMPANY_NAME}}</div>
           <div class="sign-space"></div>
@@ -366,4 +515,5 @@
 
   </div>
 </body>
+
 </html>

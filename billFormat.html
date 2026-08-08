@@ -1,12 +1,12 @@
-<!--
-@template-name: Standard Invoice
-@template-description: Ink-and-paper ledger style with a firm masthead, stamped TAX INVOICE mark and scan-to-pay footer
-@template-category: Standard
-@template-author: @AyushAggarwal1
-@template-version: 2.0
--->
+<!-- @template-name: Standard Invoice -->
+<!-- @template-description: Ink-and-paper ledger style with a firm masthead, stamped TAX INVOICE mark and scan-to-pay footer -->
+<!-- @template-category: Standard -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 2.0 -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -24,7 +24,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -54,7 +58,12 @@
       border-bottom: 2px solid var(--ink);
     }
 
-    .identity { display: flex; gap: 14px; align-items: flex-start; min-width: 0; }
+    .identity {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      min-width: 0;
+    }
 
     .profile-photo {
       height: 56px;
@@ -71,11 +80,25 @@
       line-height: 1.15;
     }
 
-    .firm-meta { margin-top: 6px; font-size: 9.5px; color: var(--muted); }
-    .firm-meta p { margin: 0 0 1px 0; }
-    .firm-meta .gstin { color: var(--ink); font-weight: 600; }
+    .firm-meta {
+      margin-top: 6px;
+      font-size: 9.5px;
+      color: var(--muted);
+    }
 
-    .doc-block { text-align: right; flex-shrink: 0; }
+    .firm-meta p {
+      margin: 0 0 1px 0;
+    }
+
+    .firm-meta .gstin {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .doc-block {
+      text-align: right;
+      flex-shrink: 0;
+    }
 
     .doc-stamp {
       display: inline-block;
@@ -87,8 +110,18 @@
       text-transform: uppercase;
     }
 
-    .doc-meta { margin-top: 10px; font-size: 10px; }
-    .doc-meta .row { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 2px; }
+    .doc-meta {
+      margin-top: 10px;
+      font-size: 10px;
+    }
+
+    .doc-meta .row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
     .doc-meta .label {
       color: var(--faint);
       text-transform: uppercase;
@@ -96,13 +129,28 @@
       font-size: 8.5px;
       padding-top: 1px;
     }
-    .doc-meta .value { font-weight: 600; font-variant-numeric: tabular-nums; }
-    .doc-meta .value.accent { color: var(--accent); }
+
+    .doc-meta .value {
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .doc-meta .value.accent {
+      color: var(--accent);
+    }
 
     /* ---------- parties ---------- */
-    .parties { display: flex; gap: 40px; padding: 16px 0 18px; }
+    .parties {
+      display: flex;
+      gap: 40px;
+      padding: 16px 0 18px;
+    }
 
-    .party { flex: 1; min-width: 0; max-width: 62%; }
+    .party {
+      flex: 1;
+      min-width: 0;
+      max-width: 62%;
+    }
 
     .eyebrow {
       font-size: 8.5px;
@@ -113,9 +161,21 @@
       margin-bottom: 6px;
     }
 
-    .party .name { font-size: 12.5px; font-weight: 700; margin-bottom: 3px; }
-    .party p { margin: 0 0 2px 0; color: var(--muted); }
-    .party .gstin { color: var(--ink); font-weight: 600; }
+    .party .name {
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .party p {
+      margin: 0 0 2px 0;
+      color: var(--muted);
+    }
+
+    .party .gstin {
+      color: var(--ink);
+      font-weight: 600;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -124,7 +184,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       font-size: 8.5px;
@@ -144,13 +206,29 @@
       vertical-align: top;
     }
 
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 500; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody td:nth-child(2) {
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- totals ---------- */
     .totals-wrap {
@@ -166,9 +244,20 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.summary-table td { padding: 4px 0; font-size: 11px; }
-    table.summary-table td:first-child { color: var(--muted); text-align: left; }
-    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+    table.summary-table td {
+      padding: 4px 0;
+      font-size: 11px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+      text-align: left;
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
 
     table.summary-table tr.total-row td {
       padding-top: 8px;
@@ -177,7 +266,10 @@
       font-weight: 700;
       color: var(--ink);
     }
-    table.summary-table tr.total-row td:last-child { color: var(--accent); }
+
+    table.summary-table tr.total-row td:last-child {
+      color: var(--accent);
+    }
 
     .amount-in-words {
       margin-top: 14px;
@@ -186,6 +278,7 @@
       font-size: 10px;
       page-break-inside: avoid;
     }
+
     .amount-in-words .aw-label {
       font-size: 8.5px;
       font-weight: 700;
@@ -194,7 +287,10 @@
       color: var(--faint);
       margin-right: 8px;
     }
-    .amount-in-words strong { font-weight: 600; }
+
+    .amount-in-words strong {
+      font-weight: 600;
+    }
 
     /* ---------- payment + signature ---------- */
     .payment-row {
@@ -216,7 +312,12 @@
       color: var(--accent);
       margin-bottom: 6px;
     }
-    .bank-details p { color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
 
     .sign-row {
       display: flex;
@@ -225,9 +326,20 @@
       page-break-inside: avoid;
     }
 
-    .signatory { text-align: center; min-width: 200px; }
-    .signatory .for-firm { font-size: 10.5px; font-weight: 600; }
-    .signatory .sign-space { height: 52px; }
+    .signatory {
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .signatory .for-firm {
+      font-size: 10.5px;
+      font-weight: 600;
+    }
+
+    .signatory .sign-space {
+      height: 52px;
+    }
+
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 5px;
@@ -249,26 +361,52 @@
     }
 
     /* Keep payment, signature and legal footer together across page breaks */
-    .doc-tail { page-break-inside: avoid; }
+    .doc-tail {
+      page-break-inside: avoid;
+    }
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 12mm; }
-      body { background: var(--paper); }
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
       .sheet {
         max-width: 100%;
         margin: 0;
         padding: 0;
         border: none;
       }
-      .parties { padding: 12px 0 14px; }
-      .payment-row { margin-top: 12px; padding-top: 10px; }
-      .sign-row { margin-top: 12px; }
-      .signatory .sign-space { height: 40px; }
-      .legal-footer { margin-top: 12px; }
+
+      .parties {
+        padding: 12px 0 14px;
+      }
+
+      .payment-row {
+        margin-top: 12px;
+        padding-top: 10px;
+      }
+
+      .sign-row {
+        margin-top: 12px;
+      }
+
+      .signatory .sign-space {
+        height: 40px;
+      }
+
+      .legal-footer {
+        margin-top: 12px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
 
@@ -363,4 +501,5 @@
 
   </div>
 </body>
+
 </html>

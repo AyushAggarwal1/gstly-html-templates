@@ -1,12 +1,11 @@
-<!--
-@template-name: Professional Standard
-@template-description: Letterhead style in currency-note green with a document band and formal signature section
-@template-category: Professional
-@template-author: @AyushAggarwal1
-@template-version: 2.0
--->
+<!-- @template-name: Professional Standard -->
+<!-- @template-description: Letterhead style in currency-note green with a document band and formal signature section -->
+<!-- @template-category: Professional -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 2.0 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -24,7 +23,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -53,7 +56,11 @@
       margin-bottom: 16px;
     }
 
-    .identity { display: flex; gap: 13px; min-width: 0; }
+    .identity {
+      display: flex;
+      gap: 13px;
+      min-width: 0;
+    }
 
     .profile-photo {
       height: 54px;
@@ -63,10 +70,27 @@
       border: 1px solid var(--rule);
     }
 
-    .firm-name { font-size: 20px; font-weight: 700; color: var(--green); letter-spacing: -0.2px; }
-    .firm-meta { margin-top: 5px; font-size: 9.5px; color: var(--muted); }
-    .firm-meta p { margin: 0 0 1px; }
-    .firm-meta .gstin { color: var(--ink); font-weight: 700; }
+    .firm-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.2px;
+    }
+
+    .firm-meta {
+      margin-top: 5px;
+      font-size: 9.5px;
+      color: var(--muted);
+    }
+
+    .firm-meta p {
+      margin: 0 0 1px;
+    }
+
+    .firm-meta .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     /* ---------- document band ---------- */
     .doc-band {
@@ -87,7 +111,12 @@
       text-transform: uppercase;
     }
 
-    .doc-band .meta { display: flex; gap: 20px; font-variant-numeric: tabular-nums; }
+    .doc-band .meta {
+      display: flex;
+      gap: 20px;
+      font-variant-numeric: tabular-nums;
+    }
+
     .doc-band .meta .label {
       display: block;
       font-size: 7.5px;
@@ -95,10 +124,17 @@
       text-transform: uppercase;
       opacity: 0.75;
     }
-    .doc-band .meta .value { font-size: 11px; font-weight: 700; }
+
+    .doc-band .meta .value {
+      font-size: 11px;
+      font-weight: 700;
+    }
 
     /* ---------- parties ---------- */
-    .party { margin: 18px 0; max-width: 62%; }
+    .party {
+      margin: 18px 0;
+      max-width: 62%;
+    }
 
     .eyebrow {
       font-size: 8.5px;
@@ -109,9 +145,20 @@
       margin-bottom: 6px;
     }
 
-    .party .name { font-size: 12.5px; font-weight: 700; }
-    .party p { margin: 1px 0 0; color: var(--muted); }
-    .party .gstin { color: var(--ink); font-weight: 700; }
+    .party .name {
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .party p {
+      margin: 1px 0 0;
+      color: var(--muted);
+    }
+
+    .party .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -120,7 +167,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       background: var(--green-tint);
@@ -141,13 +190,29 @@
       font-size: 10.5px;
     }
 
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 500; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody td:nth-child(2) {
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- totals ---------- */
     .totals-wrap {
@@ -162,9 +227,21 @@
       border-collapse: collapse;
       font-variant-numeric: tabular-nums;
     }
-    table.summary-table td { padding: 4px 10px; font-size: 11px; }
-    table.summary-table td:first-child { color: var(--muted); }
-    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+
+    table.summary-table td {
+      padding: 4px 10px;
+      font-size: 11px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
     table.summary-table tr.total-row td {
       background: var(--green-tint);
       border-top: 2px solid var(--green);
@@ -182,6 +259,7 @@
       font-size: 10px;
       page-break-inside: avoid;
     }
+
     .amount-in-words .aw-label {
       font-size: 8.5px;
       font-weight: 700;
@@ -190,7 +268,10 @@
       color: var(--green);
       margin-right: 8px;
     }
-    .amount-in-words strong { font-weight: 600; }
+
+    .amount-in-words strong {
+      font-weight: 600;
+    }
 
     /* ---------- payment + signature ---------- */
     .payment-row {
@@ -210,7 +291,12 @@
       color: var(--green);
       margin-bottom: 5px;
     }
-    .bank-details p { color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
 
     .sign-row {
       display: flex;
@@ -220,11 +306,25 @@
       page-break-inside: avoid;
     }
 
-    .prepared-note { font-size: 8.5px; color: var(--muted); }
+    .prepared-note {
+      font-size: 8.5px;
+      color: var(--muted);
+    }
 
-    .signatory { text-align: center; min-width: 210px; }
-    .signatory .for-firm { font-size: 10.5px; font-weight: 700; }
-    .signatory .sign-space { height: 52px; }
+    .signatory {
+      text-align: center;
+      min-width: 210px;
+    }
+
+    .signatory .for-firm {
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .signatory .sign-space {
+      height: 52px;
+    }
+
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 5px;
@@ -245,25 +345,68 @@
     }
 
     /* Keep payment, signature and legal footer together across page breaks */
-    .doc-tail { page-break-inside: avoid; }
+    .doc-tail {
+      page-break-inside: avoid;
+    }
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 11mm; }
-      body { background: var(--paper); }
-      .sheet { max-width: 100%; margin: 0; padding: 0; border: none; }
-      .letterhead { margin-bottom: 10px; }
-      .party { margin: 12px 0; }
-      table.items tbody td { padding: 5px 8px; }
-      .totals-wrap { margin-top: 8px; }
-      .amount-in-words { margin-top: 8px; padding: 6px 0; }
-      .payment-row { margin-top: 10px; }
-      .sign-row { margin-top: 14px; }
-      .signatory .sign-space { height: 40px; }
-      .legal-footer { margin-top: 10px; }
+      @page {
+        size: A4;
+        margin: 11mm;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
+      .sheet {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      .letterhead {
+        margin-bottom: 10px;
+      }
+
+      .party {
+        margin: 12px 0;
+      }
+
+      table.items tbody td {
+        padding: 5px 8px;
+      }
+
+      .totals-wrap {
+        margin-top: 8px;
+      }
+
+      .amount-in-words {
+        margin-top: 8px;
+        padding: 6px 0;
+      }
+
+      .payment-row {
+        margin-top: 10px;
+      }
+
+      .sign-row {
+        margin-top: 14px;
+      }
+
+      .signatory .sign-space {
+        height: 40px;
+      }
+
+      .legal-footer {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
 
@@ -358,4 +501,5 @@
 
   </div>
 </body>
+
 </html>

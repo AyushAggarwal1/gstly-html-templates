@@ -1,12 +1,11 @@
-<!--
-@template-name: Corporate
-@template-description: Navy brand spine with a structured grid — composed, boardroom-ready stationery
-@template-category: Corporate
-@template-author: @AyushAggarwal1
-@template-version: 2.0
--->
+<!-- @template-name: Corporate -->
+<!-- @template-description: Navy brand spine with a structured grid — composed, boardroom-ready stationery -->
+<!-- @template-category: Corporate -->
+<!-- @template-author: @AyushAggarwal1 -->
+<!-- @template-version: 2.0 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{COMPANY_NAME}} - Invoice #{{BILL_NUMBER}}</title>
@@ -24,7 +23,11 @@
       --paper: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -66,7 +69,11 @@
       white-space: nowrap;
     }
 
-    .content { flex: 1; min-width: 0; padding: 38px 40px; }
+    .content {
+      flex: 1;
+      min-width: 0;
+      padding: 38px 40px;
+    }
 
     /* ---------- header ---------- */
     .header {
@@ -78,7 +85,11 @@
       border-bottom: 2px solid var(--navy);
     }
 
-    .identity { display: flex; gap: 12px; min-width: 0; }
+    .identity {
+      display: flex;
+      gap: 12px;
+      min-width: 0;
+    }
 
     .profile-photo {
       height: 52px;
@@ -88,10 +99,27 @@
       border: 1px solid var(--rule);
     }
 
-    .firm-name { font-size: 19px; font-weight: 700; letter-spacing: -0.2px; color: var(--navy); }
-    .firm-meta { margin-top: 5px; font-size: 9.5px; color: var(--muted); }
-    .firm-meta p { margin: 0 0 1px; }
-    .firm-meta .gstin { color: var(--ink); font-weight: 700; }
+    .firm-name {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: var(--navy);
+    }
+
+    .firm-meta {
+      margin-top: 5px;
+      font-size: 9.5px;
+      color: var(--muted);
+    }
+
+    .firm-meta p {
+      margin: 0 0 1px;
+    }
+
+    .firm-meta .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     table.doc-meta {
       border-collapse: collapse;
@@ -99,10 +127,12 @@
       flex-shrink: 0;
       font-variant-numeric: tabular-nums;
     }
+
     table.doc-meta td {
       border: 1px solid var(--rule);
       padding: 5px 12px;
     }
+
     table.doc-meta td.label {
       font-size: 8px;
       letter-spacing: 1.6px;
@@ -110,12 +140,23 @@
       color: var(--muted);
       background: var(--tint);
     }
-    table.doc-meta td.value { font-weight: 700; }
+
+    table.doc-meta td.value {
+      font-weight: 700;
+    }
 
     /* ---------- parties ---------- */
-    .parties { display: flex; gap: 32px; padding: 16px 0; }
+    .parties {
+      display: flex;
+      gap: 32px;
+      padding: 16px 0;
+    }
 
-    .party { flex: 1; min-width: 0; max-width: 62%; }
+    .party {
+      flex: 1;
+      min-width: 0;
+      max-width: 62%;
+    }
 
     .eyebrow {
       font-size: 8px;
@@ -128,9 +169,20 @@
       margin-bottom: 7px;
     }
 
-    .party .name { font-size: 12.5px; font-weight: 700; }
-    .party p { margin: 1px 0 0; color: var(--muted); }
-    .party .gstin { color: var(--ink); font-weight: 700; }
+    .party .name {
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .party p {
+      margin: 1px 0 0;
+      color: var(--muted);
+    }
+
+    .party .gstin {
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     /* ---------- items ---------- */
     table.items {
@@ -139,7 +191,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    table.items thead { display: table-header-group; }
+    table.items thead {
+      display: table-header-group;
+    }
 
     table.items thead th {
       background: var(--navy);
@@ -158,13 +212,29 @@
       font-size: 10.5px;
     }
 
-    table.items tbody tr { page-break-inside: avoid; }
-    table.items tbody td:nth-child(2) { font-weight: 500; }
+    table.items tbody tr {
+      page-break-inside: avoid;
+    }
 
-    .text-center { text-align: center; }
-    .text-right { text-align: right; }
-    th.text-center { text-align: center; }
-    th.text-right { text-align: right; }
+    table.items tbody td:nth-child(2) {
+      font-weight: 500;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    th.text-center {
+      text-align: center;
+    }
+
+    th.text-right {
+      text-align: right;
+    }
 
     /* ---------- totals ---------- */
     .totals-wrap {
@@ -179,9 +249,21 @@
       border-collapse: collapse;
       font-variant-numeric: tabular-nums;
     }
-    table.summary-table td { padding: 4px 10px; font-size: 11px; }
-    table.summary-table td:first-child { color: var(--muted); }
-    table.summary-table td:last-child { text-align: right; font-weight: 600; }
+
+    table.summary-table td {
+      padding: 4px 10px;
+      font-size: 11px;
+    }
+
+    table.summary-table td:first-child {
+      color: var(--muted);
+    }
+
+    table.summary-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
     table.summary-table tr.total-row td {
       background: var(--navy);
       color: #fff;
@@ -189,7 +271,10 @@
       font-weight: 700;
       padding: 8px 10px;
     }
-    table.summary-table tr.total-row td:first-child { color: rgba(255, 255, 255, 0.85); }
+
+    table.summary-table tr.total-row td:first-child {
+      color: rgba(255, 255, 255, 0.85);
+    }
 
     .amount-in-words {
       margin-top: 12px;
@@ -198,6 +283,7 @@
       font-size: 10px;
       page-break-inside: avoid;
     }
+
     .amount-in-words .aw-label {
       font-size: 8px;
       font-weight: 700;
@@ -206,7 +292,10 @@
       color: var(--navy);
       margin-right: 8px;
     }
-    .amount-in-words strong { font-weight: 600; }
+
+    .amount-in-words strong {
+      font-weight: 600;
+    }
 
     /* ---------- payment + signature ---------- */
     .payment-row {
@@ -228,7 +317,12 @@
       color: var(--navy);
       margin-bottom: 5px;
     }
-    .bank-details p { color: var(--muted); font-size: 10px; line-height: 1.6; }
+
+    .bank-details p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
 
     .sign-row {
       display: flex;
@@ -236,9 +330,21 @@
       margin-top: 24px;
       page-break-inside: avoid;
     }
-    .signatory { text-align: center; min-width: 200px; }
-    .signatory .for-firm { font-size: 10.5px; font-weight: 700; }
-    .signatory .sign-space { height: 50px; }
+
+    .signatory {
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .signatory .for-firm {
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .signatory .sign-space {
+      height: 50px;
+    }
+
     .signatory .sign-line {
       border-top: 1px solid var(--ink);
       padding-top: 5px;
@@ -259,30 +365,69 @@
     }
 
     /* Keep payment, signature and legal footer together across page breaks */
-    .doc-tail { page-break-inside: avoid; }
+    .doc-tail {
+      page-break-inside: avoid;
+    }
 
     /* ---------- print ---------- */
     @media print {
-      @page { size: A4; margin: 0; }
-      body { background: var(--paper); }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      body {
+        background: var(--paper);
+      }
+
       .sheet {
         max-width: 100%;
         margin: 0;
         border: none;
         min-height: 297mm;
       }
-      .content { padding: 9mm 11mm; }
-      .parties { padding: 11px 0; }
-      table.items tbody td { padding: 5px 8px; }
-      .totals-wrap { margin-top: 8px; }
-      .amount-in-words { margin-top: 8px; padding: 6px 12px; }
-      .payment-row { margin-top: 10px; padding-top: 8px; }
-      .sign-row { margin-top: 12px; }
-      .signatory .sign-space { height: 38px; }
-      .legal-footer { margin-top: 10px; }
+
+      .content {
+        padding: 9mm 11mm;
+      }
+
+      .parties {
+        padding: 11px 0;
+      }
+
+      table.items tbody td {
+        padding: 5px 8px;
+      }
+
+      .totals-wrap {
+        margin-top: 8px;
+      }
+
+      .amount-in-words {
+        margin-top: 8px;
+        padding: 6px 12px;
+      }
+
+      .payment-row {
+        margin-top: 10px;
+        padding-top: 8px;
+      }
+
+      .sign-row {
+        margin-top: 12px;
+      }
+
+      .signatory .sign-space {
+        height: 38px;
+      }
+
+      .legal-footer {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="sheet">
     <div class="spine"><span>Tax Invoice</span></div>
@@ -301,9 +446,18 @@
           </div>
         </div>
         <table class="doc-meta">
-          <tr><td class="label">Invoice No</td><td class="value">{{BILL_NUMBER}}</td></tr>
-          <tr><td class="label">Date</td><td class="value">{{BILL_DATE}}</td></tr>
-          <tr><td class="label">Tax</td><td class="value">{{TAX_TYPE}}</td></tr>
+          <tr>
+            <td class="label">Invoice No</td>
+            <td class="value">{{BILL_NUMBER}}</td>
+          </tr>
+          <tr>
+            <td class="label">Date</td>
+            <td class="value">{{BILL_DATE}}</td>
+          </tr>
+          <tr>
+            <td class="label">Tax</td>
+            <td class="value">{{TAX_TYPE}}</td>
+          </tr>
         </table>
       </div>
 
@@ -377,4 +531,5 @@
     </div>
   </div>
 </body>
+
 </html>

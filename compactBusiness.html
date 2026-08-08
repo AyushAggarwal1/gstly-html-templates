@@ -57,9 +57,10 @@
     .strip .identity { display: flex; align-items: center; gap: 10px; min-width: 0; }
 
     .profile-photo {
-      width: 34px;
       height: 34px;
-      object-fit: cover;
+      width: auto;
+      max-width: 130px;
+      object-fit: contain;
       border: 1px solid rgba(255, 255, 255, 0.35);
     }
 
